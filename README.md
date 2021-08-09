@@ -20,6 +20,7 @@ This project will attempt to help English speakers learn Hebrew. The user does N
 - [ ] Add audio files and functionality/ability to contribute to collaborative dictionary
 3. As a **NON-ENGLISH SPEAKER**, I want the option to type in my own language, because I am more comfortable producing phonemes is my own script. 
 - [ ] Dropdown options: Arabic, Russian, English (auto)
+- [ ] For English/Latin script, create script converter similar to [Yamli](https://www.yamli.com/api/docs/#1.1)
 4. As **ANY USER**, I want word suggestions as I type, because I may not know what I heard fully, but I might recognize it if I saw it.
 - [ ] Create autocomplete API
 - [ ] Bind input text/autocomplete
