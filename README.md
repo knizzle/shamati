@@ -25,12 +25,16 @@ This project will attempt to help English speakers learn Hebrew. The user does N
 - [ ] Create autocomplete API
 - [ ] Bind input text/autocomplete
 5. As a **MOBILE USER**, I want a platform that is adjustable and easy to use on my mobile device, so that I can use it anywhere at anytime.
-- [ ] CSS @media sizes and stylings
+- [ ] CSS media queries
 
 ### Data Model
 `???`
 
 ### Schedule
-###### TBD
-###### 24 AUG, 2021: Final MVP done for presentations; Begin presentation practice
+###### 09 AUG, 2021: Proposal done
+###### 12 AUG, 2021: MVP #1 done
+###### 16 AUG, 2021: MVP #2 done
+###### 19 AUG, 2021: MVP #3 done
+###### 22 AUG, 2021: MVP #4 done
+###### 24 AUG, 2021: MVP #5 done for presentations; Begin presentation practice
 ###### 27 AUG, 2021: Present to PDX Code Guild
