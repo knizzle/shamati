@@ -24,15 +24,15 @@ Unlike *Fuzzy Arabic* (mentioned above), I will not be adding the vowels to the 
 - [ ]
 - [ ]
 3. As a **NON-ENGLISH SPEAKER**, I want the option to type in my own language, because I am more comfortable producing phonemes is my own script. 
-- [ ]
+- [ ] Dropdown options: Arabic
 - [ ]
 - [ ]
 4. As **ANY USER**, I want word suggestions as I type, because I may not know what I heard fully, but I might recognize it if I saw it.
-- [ ]
-- [ ]
+- [ ] Create autocomplete API
+- [ ] Bind input text/autocomplete
 - [ ]
 5. As a **MOBILE USER**, I want a platform that is adjustable and easy to use on my mobile device. 
-- [ ]
+- [ ] CSS @media sizes and stylings
 - [ ]
 - [ ]
 
