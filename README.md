@@ -32,5 +32,5 @@ Unlike *Fuzzy Arabic* (mentioned above), I will not be adding the vowels to the 
 
 ### Schedule
 ###### TBD
-###### 23 AUG, 2021: Final MVP done for presentations; Begin presentation practice
+###### 24 AUG, 2021: Final MVP done for presentations; Begin presentation practice
 ###### 27 AUG, 2021: Present to PDX Code Guild
