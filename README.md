@@ -15,9 +15,9 @@ This project will attempt to help English speakers learn Hebrew. The user does N
 ### User Stories
 1. As a **HEBREW LEARNER**, I want a tool that is simple and easy to use. No frills, no unnecessary styling and fluff - just basic input and output. Another nice feature would be to have the option to upload audio files of origin, or talk-to-text feature for those "it kinda sounded like ____" moments.
 - [ ] Create 'fuzzy' API - **MVP #2**
-- [ ] Grab meaning from Pealim - **MVP #5**
+- [ ] Grab meaning from Pealim - **MVP #3**
 2. As a **HEBREW TEACHER**, I want audio files and the ability to edit, in order to ensure accuracy, and so that my students don't have to unlearn something in the future. 
-- [ ] Add audio files and functionality/ability to contribute to collaborative dictionary
+- [ ] Add audio files and functionality/ability to contribute to collaborative dictionary - **MVP #5**
 3. As a **NON-ENGLISH SPEAKER**, I want the option to type in my own language, because I am more comfortable producing phonemes is my own script. 
 - [ ] Dropdown options: Arabic, Russian, English (auto)
 - [ ] For English/Latin script, create script converter similar to [Yamli](https://www.yamli.com/api/docs/#1.1) - **MVP #1**
