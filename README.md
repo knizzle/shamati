@@ -20,17 +20,12 @@ Unlike *Fuzzy Arabic* (mentioned above), I will not be adding the vowels to the 
 - [ ] Do another thing
 - [ ] Last thing
 2. As a **HEBREW TEACHER**, I want audio files and the ability to edit, in order to ensure accuracy, and so that my students don't have to unlearn something in the future. 
-- [ ] 
-- [ ]
 - [ ] Add audio files and functionality
 3. As a **NON-ENGLISH SPEAKER**, I want the option to type in my own language, because I am more comfortable producing phonemes is my own script. 
 - [ ] Dropdown options: Arabic, Russian, English (auto)
-- [ ]
-- [ ]
 4. As **ANY USER**, I want word suggestions as I type, because I may not know what I heard fully, but I might recognize it if I saw it.
 - [ ] Create autocomplete API
 - [ ] Bind input text/autocomplete
-- [ ]
 5. As a **MOBILE USER**, I want a platform that is adjustable and easy to use on my mobile device. 
 - [ ] CSS @media sizes and stylings
 
