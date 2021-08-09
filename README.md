@@ -28,7 +28,9 @@ This project will attempt to help English speakers learn Hebrew. The user does N
 - [ ] CSS media queries
 
 ### Data Model
-`???`
+* User
+* Phoneme
+* Word
 
 ### Schedule
 ###### 09 AUG, 2021: Proposal done
