@@ -16,9 +16,9 @@ Unlike *Fuzzy Arabic* (mentioned above), I will not be adding the vowels to the 
 
 ### User Stories
 1. As a HEBREW LEARNER, I want a tool that is simple and easy to use. No frills, no unnecessary styling and fluff - just basic input and output.
--[ ] 
--[ ]
--[ ]
+-[ ] Do something
+-[ ] Do another thing
+-[ ] Last thing
 2. As a HEBREW TEACHER, I want a tool that is accurate, because it will ensure that my students don't have to unlearn something in the future.
 [ ]
 [ ]
