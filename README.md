@@ -16,25 +16,25 @@ Unlike *Fuzzy Arabic* (mentioned above), I will not be adding the vowels to the 
 
 ### User Stories
 1. As a HEBREW LEARNER, I want a tool that is simple and easy to use. No frills, no unnecessary styling and fluff - just basic input and output.
-[] 
-[]
-[]
+[ ] 
+[ ]
+[ ]
 2. As a HEBREW TEACHER, I want a tool that is accurate, because it will ensure that my students don't have to unlearn something in the future.
-[]
-[]
-[]
+[ ]
+[ ]
+[ ]
 3. As a NON-ENGLISH SPEAKER, I want the option to type in my own language, because I am more comfortable producing phonemes is my own script. 
-[]
-[]
-[]
+[ ]
+[ ]
+[ ]
 4. As ANY USER, I want suggested words, because I may not know what I heard fully, but I might recognize it if I saw it.
-[]
-[]
-[]
+[ ]
+[ ]
+[ ]
 5. As a MOBILE USER, I want a platform that is adjustable and easy to use on my mobile device. 
-[]
-[]
-[]
+[ ]
+[ ]
+[ ]
 
 ### Schedule
 TBD
