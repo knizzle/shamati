@@ -33,8 +33,6 @@ Unlike *Fuzzy Arabic* (mentioned above), I will not be adding the vowels to the 
 - [ ]
 5. As a **MOBILE USER**, I want a platform that is adjustable and easy to use on my mobile device. 
 - [ ] CSS @media sizes and stylings
-- [ ]
-- [ ]
 
 ### Data Model
 
