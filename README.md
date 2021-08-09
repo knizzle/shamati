@@ -3,7 +3,7 @@ In Hebrew, the word *shamati* (שמעתי) means *I heard*.
 Kelsey's capstone project for PDX Code Guild, cohort Salmon.
 
 ### Project Overview
-This project will attempt to help English speakers learn Hebrew. The user does NOT need to know how to read or write in Hebrew, but would be beneficial. In my early Arabic-learning days, I would use the website [Fuzzy Arabic](http://fuzzyarabic.herokuapp.com/) as a tool to help me discover words that I had heard in Arabic, but did not know the meaning to, nor if I had even heard it correctly. Shamati takes a word or combination of sounds that the user hears/heard, typed phonetically in Latin script, and offers a list of possible Hebrew words. The list will include each word's 
+This project will attempt to help English speakers learn Hebrew. The user does NOT need to know how to read or write in Hebrew, though it would be beneficial to them in the long run. In my early Arabic-learning days, I would use the website [Fuzzy Arabic](http://fuzzyarabic.herokuapp.com/) as a tool to help me discover words that I had heard in Arabic, but did not know the meaning to, nor if I had even heard it correctly. Shamati takes a word or combination of sounds that the user hears/heard, typed phonetically in Latin script, and offers a list of possible Hebrew words. The list will include each word's 
 
 * meaning, 
 * root letters, 
