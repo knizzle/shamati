@@ -31,6 +31,7 @@ This project will attempt to help English speakers learn Hebrew. The user does N
 * User
 * Phoneme
 * Word
+* Results
 
 ### Schedule
 ###### 09 AUG, 2021: Proposal done
