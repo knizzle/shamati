@@ -28,6 +28,7 @@ Unlike *Fuzzy Arabic* (mentioned above), I will not be adding the vowels to the 
 - [ ] CSS @media sizes and stylings
 
 ### Data Model
+`???`
 
 ### Schedule
 ###### TBD
