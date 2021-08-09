@@ -20,9 +20,9 @@ Unlike *Fuzzy Arabic* (mentioned above), I will not be adding the vowels to the 
 - [ ] Do another thing
 - [ ] Last thing
 2. As a **HEBREW TEACHER**, I want a tool that is accurate, because it will ensure that my students don't have to unlearn something in the future.
+- [ ] 
 - [ ]
-- [ ]
-- [ ]
+- [ ] Add audio, to ensure accuracy
 3. As a **NON-ENGLISH SPEAKER**, I want the option to type in my own language, because I am more comfortable producing phonemes is my own script. 
 - [ ] Dropdown options: Arabic, Russian, English (auto)
 - [ ]
