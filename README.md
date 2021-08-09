@@ -27,7 +27,7 @@ Unlike *Fuzzy Arabic* (mentioned above), I will not be adding the vowels to the 
 - [ ]
 - [ ]
 - [ ]
-4. As **ANY USER**, I want suggested words, because I may not know what I heard fully, but I might recognize it if I saw it.
+4. As **ANY USER**, I want word suggestions as I type, because I may not know what I heard fully, but I might recognize it if I saw it.
 - [ ]
 - [ ]
 - [ ]
