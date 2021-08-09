@@ -1,5 +1,5 @@
 # Shamati
-In Hebrew, the word *shamati* (שמעתי) means *I heard*.
+In Hebrew, the word *shamati* (שמעתי) means *I heard*.\n
 Kelsey's capstone project for PDX Code Guild, cohort Salmon. Presentation date: August 27, 2021.
 
 ### Project Overview
