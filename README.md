@@ -26,7 +26,7 @@ Unlike *Fuzzy Arabic* (mentioned above), I will not be adding the vowels to the 
 4. As **ANY USER**, I want word suggestions as I type, because I may not know what I heard fully, but I might recognize it if I saw it.
 - [ ] Create autocomplete API
 - [ ] Bind input text/autocomplete
-5. As a **MOBILE USER**, I want a platform that is adjustable and easy to use on my mobile device. 
+5. As a **MOBILE USER**, I want a platform that is adjustable and easy to use on my mobile device, so that I can use it anywhere at anytime.
 - [ ] CSS @media sizes and stylings
 
 ### Data Model
