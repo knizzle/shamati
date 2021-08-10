@@ -26,6 +26,7 @@ This project will attempt to help English speakers learn Hebrew. The user does N
 - [ ] Ability to add audio files/contribute to collaborative dictionary - ***MVP #5***
 5. As a **MOBILE USER**, I want a platform that is adjustable and easy to use on my mobile device, so that I can use it anywhere at anytime.
 - [ ] CSS media queries
+- [ ] Available offline
 
 ### Data Model
 * User
