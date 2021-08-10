@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Shamati</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Miriam+Libre&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href='/static/style.css' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body>
+    <header class='text-right'>
+      <h1 class='text-6xl mt-5 mr-4'>Shamati</h1>
+      <h4 class='mr-7'>The Fuzzy Hebrew Dictionary</h4>
+      <h2 class='text-6xl mr-40'>שמעתי</h2>
+      <nav class="max-w-xs"> 
+        <button type="button" class="collapsible">About</button>
+          <div class="content">
+            <p class="text-left">Hear a Hebrew word that you're just not quite sure about? Let Shamati, the Fuzzy Hebrew Dictionary, help you out! Simply  type out phonetically the sounds you heard (in English/Latin script), and possible Hebrew words will result below.</p>
+          </div>
+        <button type="button" class="collapsible">Contact</button>
+          <div class="content">
+            <form>
+              <input type='text'>
+              <button type='submit'>submit</button>
+            </form>
+          </div>
+        </nav>
+    </header>
+    <script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+  </body>
+</html>
