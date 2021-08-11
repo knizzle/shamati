@@ -22,21 +22,31 @@
           </div>
         <button type="button" class="collapsible">Contact</button>
           <div class="content">
-            <form method='' action=''>
-              <input type='text'>
-              <button type='submit'>submit</button>
+
+            <div class="container">
+              <form action="/action_page.php">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name..">
+
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="Your email..">
+                </select>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+
+                <input type="submit" value="Submit">
+              </form>
+            </div>
+
             </form>
           </div>
         </nav>
     </header>
-    <div class='text-center'>
-      <form method='' action=''>
-        <input type='text'>
-        <button type='submit'>search</button>
-      </form>
-    <table>
-      <tr v-for> </tr>
-    </table>
+  
+    {% block content %}
+    {% endblock content %}
+    
     <footer class='bottom-0'>&copy; 2021 Shamati</footer>
     <script>
       var coll = document.getElementsByClassName("collapsible");

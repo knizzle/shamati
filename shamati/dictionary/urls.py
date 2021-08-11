@@ -1,4 +1,3 @@
-from django.conf.urls import url
 from django.urls import path
 
 from . import views
@@ -6,5 +5,6 @@ from . import views
 app_name = 'dictionary'
 
 urlpatterns = [
-    path('', )
+    path('', views.base, name='base'),
+    path('results/', views.results, name='results')
 ]
