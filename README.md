@@ -14,19 +14,19 @@ This project will attempt to help English speakers learn Hebrew. The user does N
 
 ### User Stories
 1. As a **NON-ENGLISH SPEAKER**, I want the option to type in my own language, because I am more comfortable producing phonemes is my own script. 
-- [ ] Dropdown options: Arabic, Russian, English (auto)
+- [ ] Dropdown options: Arabic, Russian, English (auto) (BACKLOG)
 - [ ] For English/Latin script, create script converter similar to [Yamli](https://www.yamli.com/api/docs/#1.1) - ***MVP #1***
 2. As a **HEBREW LEARNER**, I want a tool that is simple and easy to use. No frills, no unnecessary styling and fluff - just basic input and output. Another nice feature would be to have the option to upload audio files of origin, or talk-to-text feature for those "it kinda sounded like ____" moments.
-- [ ] Create 'fuzzy' match API - ***MVP #2***
+- [ ] Create 'fuzzy' match API - ***MVP #2*** -- UPDATE: regex
 - [ ] Grab meaning from Pealim - ***MVP #3***
 3. As **ANY USER**, I want word suggestions as I type, because I may not know what I heard fully, but I might recognize it if I saw it.
-- [ ] Create autocomplete API - ***MVP #4***
+- [ ] Create autocomplete API - ***MVP #4*** (BACKLOG)
 - [ ] Bind input text/autocomplete
 4. As a **HEBREW TEACHER**, I want audio files and the ability to edit, in order to ensure accuracy, and so that my students don't have to unlearn something in the future. 
-- [ ] Ability to add audio files/contribute to collaborative dictionary - ***MVP #5***
+- [ ] Ability to add audio files/contribute to collaborative dictionary - ***MVP #5*** (BACKLOG)
 5. As a **MOBILE USER**, I want a platform that is adjustable and easy to use on my mobile device, so that I can use it anywhere at anytime.
 - [ ] CSS media queries
-- [ ] Available offline
+- [ ] Available offline (BACKLOG)
 
 ### Data Model
 * User
@@ -34,11 +34,10 @@ This project will attempt to help English speakers learn Hebrew. The user does N
 * Word
 * Results
 
-### Schedule
+### Schedule -- UPDATE
 ###### 09 AUG, 2021: Proposal done
-###### 12 AUG, 2021: MVP #1 done
-###### 16 AUG, 2021: MVP #2 done
+###### 13 AUG, 2021: MVP #1 done 
+###### 17 AUG, 2021: MVP #2 done
 ###### 19 AUG, 2021: MVP #3 done
-###### 22 AUG, 2021: MVP #4 done
-###### 24 AUG, 2021: MVP #5 done for presentations; Begin presentation practice
+###### 24 AUG, 2021: Begin presentation practice
 ###### 27 AUG, 2021: Present to PDX Code Guild
