@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import generics
 
-# Create your views here.
+from dictionary.models import LatinScript, HebWord
+from .serializers import DictionarySerializer
+
+class DictionaryViewSet(generics.ListAPIView):
+    queryset = LatinScript.objects.all()
+    serializer_class = DictionarySerializer
