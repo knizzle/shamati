@@ -10,7 +10,7 @@
     <link href='/static/style.css' rel='stylesheet' type='text/css'>
   </head>
 
-  <body>
+  <body id="app">
     <header class='text-right'>
       <h1 class='text-6xl mt-5 mr-4'>Shamati</h1>
       <h4 class='mr-7'>The Fuzzy Hebrew Dictionary</h4>
@@ -26,16 +26,16 @@
             <div class="container">
               <form action="/action_page.php">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your name..">
+                <input type="text" id="name" name="name" placeholder="Name..">
 
                 <label for="email">Email</label>
-                <input type="text" id="email" name="email" placeholder="Your email..">
+                <input type="text" id="email" name="email" placeholder="E-mail..">
                 </select>
 
                 <label for="message">Message</label>
                 <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
 
-                <input type="submit" value="Submit">
+                <input type="submit" value="submit">
               </form>
             </div>
 
@@ -43,11 +43,45 @@
           </div>
         </nav>
     </header>
-  
-    {% block content %}
-    {% endblock content %}
-    
-    <footer class='bottom-0'>&copy; 2021 Shamati</footer>
+    <div>
+      <input type="text" id="latin_input" name="latin_input" placeholder='shalom, kelev, perach...'>
+      <button @click="search()">search</button> 
+    </div>
+    <table v-show="">
+      <tr v-for="result in results">
+        <td>[[ results.hebWord ]]</td>
+        <td>[[ results.xliteration ]]</td>
+        <td>[[ results.definition ]]</td>
+        <td>[[ results.partOfSpeech ]]</td>
+      </tr>
+    <footer>&copy; 2021 Shamati</footer>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      const vm = new Vue({
+    el: '#app',
+    delimiters: ["[[", "]]"],
+    data: {
+        latInput: '',
+        results: {
+          hebWord: '',
+          xliteration: '',
+          definition: '',
+          partOfSpeech: '',
+        }
+    },
+    methods: {
+        search() {
+            axios({
+                method: 'get',
+                url: '/api_app/',
+              }).then((response) => {
+                this.result = response.data.result
+            })
+        },
+    }
+})
+    </script>
     <script>
       var coll = document.getElementsByClassName("collapsible");
       var i;
@@ -64,7 +98,6 @@
         });
       }
 </script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 
   </body>
 </html>
