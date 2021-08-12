@@ -29,10 +29,10 @@ This project will attempt to help English speakers learn Hebrew. The user does N
 - [ ] Available offline (BACKLOG)
 
 ### Data Model
-* User
+* ~~User~~ -- UPDATE
 * Phoneme
 * Word
-* Results
+* Results ?? -- UPDATE
 
 ### Schedule -- UPDATE
 ###### 09 AUG, 2021: Proposal done
