@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import HebWord, LatinScript
+from .models import HebWord, Phonemes
 
 admin.site.register(HebWord)
-admin.site.register(LatinScript)
+admin.site.register(Phonemes)

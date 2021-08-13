@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             field=models.CharField(max_length=20),
         ),
         migrations.AlterField(
-            model_name='latinscript',
+            model_name='phonemes',
             name='text',
             field=models.CharField(max_length=20),
         ),

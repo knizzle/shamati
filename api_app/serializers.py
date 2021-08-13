@@ -1,10 +1,10 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 
-from dictionary.models import LatinScript, HebWord
+from dictionary.models import Phonemes, HebWord
 
 class DictionarySerializer(serializers.ModelSerializer):
-    model = HebWord
+    model = Phonemes
     fields = (
         'hebWord',
         'xliteration',

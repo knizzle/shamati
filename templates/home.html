@@ -46,7 +46,7 @@
       <input type="text" id="latin_input" name="latin_input" placeholder='shalom, kelev, perach...'>
       <button @click="search()">search</button> 
     </div>
-    <table v-if="results">
+    <table v-if="results" class='table-fixed'>
       <tr v-for="result in results">
         <td>[[ results.hebWord ]]</td>
         <td>[[ results.xliteration ]]</td>
