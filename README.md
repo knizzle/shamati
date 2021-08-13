@@ -31,7 +31,7 @@ This project will attempt to help English speakers learn Hebrew. The user does N
 ### Data Model
 * ~~User~~ -- UPDATE
 * Phoneme
-* Hebrew Letter
+* Hebrew Letter -- UPDATE
 * Word
 * Results ?? -- UPDATE
 
