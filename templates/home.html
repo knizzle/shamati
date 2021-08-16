@@ -11,16 +11,13 @@
   </head>
 
   <body id="app">
-    <header class='text-right'>
-      <h1 class='text-6xl mt-5 mr-4'>Shamati</h1>
-      <h4 class='mr-7'>The Fuzzy Hebrew Dictionary</h4>
-      <h2 class='text-6xl mr-40'>שמעתי</h2>
-      <nav class="max-w-xs"> 
-        <button type="button" class="collapsible">About</button>
+    <div class='flex flex-row justify-even'>
+      <nav class="flex flex-col max-w-xs justify-start"> 
+        <button type="button" class="collapsible text-left ml-3">About</button>
           <div class="content">
             <p class="text-left">Hear a Hebrew word that you're just not quite sure about? Let Shamati, the Fuzzy Hebrew Dictionary, help you out! Simply  type out phonetically the sounds you heard (in English/Latin script), and possible Hebrew words will result below.</p>
           </div>
-        <button type="button" class="collapsible">Contact</button>
+        <button type="button" class="collapsible text-left ml-3">Contact</button>
           <div class="content">
 
             <div class="container">
@@ -41,7 +38,13 @@
             </form>
           </div>
         </nav>
-    </header>
+        <header class='flex flex-col text-right'>
+        <h1 class='text-6xl mt-5 mr-4'>Shamati</h1>
+        <h4 class='mr-7'>The Fuzzy Hebrew Dictionary</h4>
+        <h2 class='text-6xl mr-40'>שמעתי</h2>
+      </header>
+      </div>
+    
     <div class='text-center'>
       <input type="text" id="latin_input" name="latin_input" placeholder='shalom, kelev, perach...'>
       <button @click="search()">search</button> 
