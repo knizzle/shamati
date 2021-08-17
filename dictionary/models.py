@@ -13,8 +13,8 @@ class HebLetter(models.Model):
         return self.letter
 
 class Phonemes(models.Model):
-    text = models.CharField(max_length=3)
-    HebLetter = models.ForeignKey(HebLetter, on_delete=models.CASCADE, blank=True, null=True)
+    text = models.CharField(max_length=3, )
+    hebletter = models.ManyToManyField(HebLetter, blank=True, null=True)
 
     def __str__(self):
         return self.text
