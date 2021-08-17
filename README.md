@@ -12,6 +12,7 @@ This project will attempt to help English speakers learn Hebrew. The user does N
 2. As a **HEBREW LEARNER**, I want a tool that is simple and easy to use. No frills, no unnecessary styling and fluff - just basic input and output. Another nice feature would be to have the option to upload audio files of origin, or talk-to-text feature for those "it kinda sounded like ____" moments.
 * Create 'fuzzy' match API - ***MVP #2*** -- UPDATE: regex
 * Grab meaning from Pealim - ***MVP #3***
+* I want a sound byte to hear how the Hebrew words sound, and to verify what I think I heard (BACKLOG)
 3. As **ANY USER**, I want word suggestions as I type, because I may not know what I heard fully, but I might recognize it if I saw it.
 * Create autocomplete API - ***MVP #4*** (BACKLOG)
 * Bind input text/autocomplete
