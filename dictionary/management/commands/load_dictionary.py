@@ -25,7 +25,7 @@ class Command(BaseCommand):
            # Add Phonemes to DB
             phoneme_obj = Phonemes.objects.create(
                 text = phoneme
-                # hebletter = 
+                hebletter = 
             )
 
             # Loop through HebWord list
