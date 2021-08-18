@@ -51,11 +51,11 @@
     </div>
     <table v-if="results" class='table-fixed'>
       <tr v-for="result in results">
-        <td>[[ results.hebWord ]]</td>
-        <td>[[ results.xliteration ]]</td>
-        <td>[[ results.root ]]
-        <td>[[ results.partOfSpeech ]]</td>
-        <td>[[ results.definition ]]</td>
+        <td>[[ words.word ]]</td>
+        <td>[[ words.transliteration ]]</td>
+        <td>[[ words.root ]]
+        <td>[[ words.partOfSpeech ]]</td>
+        <td>[[ words.definition ]]</td>
       </tr>
     <footer class='absolute bottom-0'>&copy; 2021 Shamati</footer>
     <script src="https://unpkg.com/vue"></script>
@@ -65,12 +65,7 @@
     el: '#app',
     delimiters: ["[[", "]]"],
     data: {
-        latInput: '',
-        results: {
-          hebWord: '',
-          xliteration: '',
-          definition: '',
-          partOfSpeech: '',
+        
         },
     },
     methods: {

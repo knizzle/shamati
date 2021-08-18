@@ -1,18 +1,18 @@
 from django.db.models import query
-from rest_framework import generics
+from rest_framework import generics, viewsets
 
 from dictionary.models import HebWord, Phonemes, HebLetter
 from .serializers import DictionarySerializer, SoundsSerializer, LettersSerializer
 
-class DictionaryViewSet(generics.ListAPIView):
+class DictionaryViewSet(viewsets.ModelViewSet):
     queryset = HebWord.objects.all()
     serializer_class = DictionarySerializer
 
 
-class SoundsViewSet(generics.ListAPIView):
+class SoundsViewSet(viewsets.ModelViewSet):
     queryset = Phonemes.objects.all()
     serializer_class = SoundsSerializer
 
-class LettersViewSet(generics.ListAPIView):
+class LettersViewSet(viewsets.ModelViewSet):
     queryset = HebLetter.objects.all()
     serializer_class = LettersSerializer

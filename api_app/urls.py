@@ -9,6 +9,10 @@ router.register('phonemes', SoundsViewSet, basename='sounds')
 router.register('hebletters', LettersViewSet, basename='letters')
 
 
-urlpatterns = [
-    path('', DictionaryViewSet.as_view()),
-]
+# urlpatterns = [
+#     path('hebwords', DictionaryViewSet.as_view()),
+#     path('phonemes/', SoundsViewSet.as_view()),
+#     path('letters/', LettersViewSet.as_view()),
+# ]
+
+urlpatterns = router.urls
