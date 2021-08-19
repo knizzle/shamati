@@ -2,7 +2,7 @@ from django.db import models
 
 class HebWord(models.Model):
     word = models.CharField(max_length=20, blank=True, null=True)
-    transliteration = models.CharField(max_length=20, blank=True, null=True)
+    transliteration = models.CharField(max_length=50, blank=True, null=True)
     root = models.CharField(max_length=20, blank=True, null=True)
     partOfSpeech = models.CharField(max_length=50, blank=True, null=True)
     definition = models.CharField(max_length=50, blank=True, null=True)

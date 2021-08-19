@@ -46,39 +46,43 @@
       </div>
     
     <div class='text-center'>
-      <input type="text" id="latin_input" name="latin_input" placeholder='shalom, kelev, perach...'>
-      <button @click="search()">search</button> 
+      {% comment %} <form method="post" action="{% url '' %}"> {% endcomment %}
+      {% csrf_token %}
+      <input type="text" id="phonemes" name="phonemes" placeholder='shalom, kelev, perach...'>
+      <button type="submit" @click="search">search</button> 
     </div>
     <table v-if="results" class='table-fixed'>
       <tr v-for="result in results">
-        <td>[[ words.word ]]</td>
-        <td>[[ words.transliteration ]]</td>
-        <td>[[ words.root ]]
-        <td>[[ words.partOfSpeech ]]</td>
-        <td>[[ words.definition ]]</td>
+        <td>[[ results.word ]]</td>
+        <td>[[ results.transliteration ]]</td>
+        <td>[[ results.root ]]
+        <td>[[ results.partOfSpeech ]]</td>
+        <td>[[ results.definition ]]</td>
       </tr>
+    </table>
     <footer class='absolute bottom-0'>&copy; 2021 Shamati</footer>
+
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
       const vm = new Vue({
-    el: '#app',
-    delimiters: ["[[", "]]"],
-    data: {
-        
+        el: '#app',
+        delimiters: ["[[", "]]"],
+        data: {
+            results: [],
+            },
         },
-    },
-    methods: {
-        search() {
-            axios({
-                method: 'get',
-                url: '/api_app/',
-              }).then((response) => {
-                this.result = response.data.result
-            })
-        },
-    }
-})
+        methods: {
+            search: function() {
+                axios({
+                    method: 'post',
+                    url: 'api_app/hebwords/',
+                  }).then(response => {
+                    this.results = response.data
+                })
+            },
+        }
+    })
     </script>
     <script>
       var coll = document.getElementsByClassName("collapsible");
@@ -95,7 +99,7 @@
           }
         });
       }
-</script>
+    </script>
 
   </body>
 </html>
