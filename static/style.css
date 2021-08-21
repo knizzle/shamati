@@ -1,8 +1,9 @@
 body {
     font-family: 'Miriam Libre', sans-serif;
-}
+    color: red;
+  }
 
-.collapsible {
+/* .collapsible {
     background-color: #777;
     color: white;
     cursor: pointer;
@@ -24,3 +25,5 @@ body {
     overflow: hidden;
     background-color: #f1f1f1;
   }
+ */
+
