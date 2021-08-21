@@ -10,7 +10,7 @@ dictionary = {
     "ז": ["z", "s"],
     "ח": ["ch", "h", "kh", "ach", "akh"],
     "ט": ["t", "th"],
-    "י": ["y", "i", ""],
+    "י": ["y", "i", "", "e"],
     "כ": ["ch", "h", "k", "c", "kh", "ck"],
     "ל": ["l"],
     "מ": ["m"],
@@ -29,20 +29,22 @@ dictionary = {
     "": ["a", "i", "e", "o", "h", "u", "y"]
 }
 
-user_entry = 'rosh'
-
-'''THIS FUNCTION WORKS'''
 def combo_objs(user_entry):
     word = [user_entry[i:j] for i, j in itertools.combinations(range(len(user_entry)+1),2)]
     combos = sorted(word, key=len, reverse=True)
+    print(combos)
     for combo in combos:
         keys = [key for key, value in dictionary.items() if combo in value]
         if keys == []:
             pass
         else:
-            return keys
+            print(keys)       
+    
+            
+            
+combo_objs('mushlam') 
 
-'''THIS FUNCTION WORKS'''
+
 def last_letter(user_entry): 
     permutations = []
     for letter in user_entry:
@@ -60,3 +62,4 @@ def last_letter(user_entry):
         return 'ן'
     else:
         return -1
+
