@@ -11,7 +11,7 @@
   </head>
 
   <body id="app">
-    <div class='flex flex-row justify-even'>
+    <div class='flex flex-row'>
       <nav class="flex flex-col max-w-xs justify-start"> 
         <button type="button" class="collapsible text-left ml-3">About</button>
           <div class="content">
@@ -19,39 +19,85 @@
           </div>
         <button type="button" class="collapsible text-left ml-3">Contact</button>
           <div class="content">
-
             <div class="container">
               <form action="/action_page.php">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="Name"><br>
-
                 <label for="email">Email</label>
                 <input type="text" id="email" name="email" placeholder="E-mail"><br>
-
                 <label for="message">Message</label>
                 <textarea id="message" name="message" placeholder="Message" style="height:200px"></textarea>
-
                 <input type="submit" value="submit">
               </form>
             </div>
-
             </form>
           </div>
         </nav>
         <header class='flex flex-col text-right'>
-        <h1 class='text-6xl mt-5 mr-4'>Shamati</h1>
-        <h4 class='mr-7'>The Fuzzy Hebrew Dictionary</h4>
-        <h2 class='text-6xl mr-40'>שמעתי</h2>
-      </header>
+          <h1 class='text-6xl mt-5 mr-4'>Shamati</h1>
+          <h4 class='mr-7'>The Fuzzy Hebrew Dictionary</h4>
+          <h2 class='text-6xl mr-40'>שמעתי</h2>
+        </header>
       </div>
     
     <div class='text-center'>
-      {% comment %} <form method="post" action="{% url '' %}"> {% endcomment %}
-      {% csrf_token %}
-      <input type="text" id="phonemes" name="phonemes" placeholder='shalom, kelev, perach...'>
-      <button type="submit" @click="search">search</button> 
+      <button @click="string"> </button>
+      <button >'</button>
+      <button >a</button>
+      <button>ah</button>
+      <button>ai</button>
+      <button>av</button>
+      <button>ay</button>
+      <button>ach</button>
+      <button>akh</button>
+      <button>b</button>
+      <button>c</button>
+      <button>ch</button>
+      <button>ck</button>
+      <button>d</button>
+      <button>e</button>
+      <button>ei</button>
+      <button>eh</button>
+      <button>ev</button>
+      <button>f</button>
+      <button>g</button>
+      <button>h</button>
+      <button>i</button>
+      <button>i</button>
+      <button>izz</button>
+      <button>j</button>
+      <button>k</button>
+      <button>kh</button>
+      <button>l</button>
+      <button>m</button>
+      <button>n</button>
+      <button>o</button>
+      <button>oh</button>
+      <button>oo</button>
+      <button>ou</button>
+      <button>p</button>
+      <button>ph</button>
+      <button>q</button>
+      <button>r</button>
+      <button>s</button>
+      <button>sh</button>
+      <button>sch</button>
+      <button>t</button>
+      <button>ts</button>
+      <button>tz</button>
+      <button>u</button>
+      <button>v</button>
+      <button>va</button>
+      <button>ve</button>
+      <button>w</button>
+      <button>wa</button>
+      <button>wo</button>
+      <button>wu</button>
+      <button>y</button>
+      <button>z</button>
+      <p >
     </div>
-    <table v-if="results" class='table-fixed'>
+    <table v-if="results" class='table-fixed text-center'>
       <tr v-for="result in results">
         <td>[[ results.word ]]</td>
         <td>[[ results.transliteration ]]</td>

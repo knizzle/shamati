@@ -20,6 +20,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import generics, viewsets
 
+import nltk
+
 from dictionary.models import HebWord, Phonemes, HebLetter
 from .serializers import DictionarySerializer, SoundsSerializer, LettersSerializer
 
@@ -31,3 +33,5 @@ class HebString(APIView):
         phoneme_output = ', '.join([str(item) for item in all_phonemes])
         return Response(all_phonemes)
 
+# class PhonemeJoin(APIView):
+#     def 
