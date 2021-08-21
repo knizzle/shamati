@@ -31,11 +31,18 @@ dictionary = {
 
 user_entry = 'rosh'
 
+'''THIS FUNCTION WORKS'''
 def combo_objs(user_entry):
     word = [user_entry[i:j] for i, j in itertools.combinations(range(len(user_entry)+1),2)]
     combos = sorted(word, key=len, reverse=True)
-    return combos
+    for combo in combos:
+        keys = [key for key, value in dictionary.items() if combo in value]
+        if keys == []:
+            pass
+        else:
+            return keys
 
+'''THIS FUNCTION WORKS'''
 def last_letter(user_entry): 
     permutations = []
     for letter in user_entry:
