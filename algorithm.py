@@ -29,37 +29,44 @@ dictionary = {
     "": ["a", "i", "e", "o", "h", "u", "y"]
 }
 
-def combo_objs(user_entry):
-    word = [user_entry[i:j] for i, j in itertools.combinations(range(len(user_entry)+1),2)]
-    combos = sorted(word, key=len, reverse=True)
-    print(combos)
-    for combo in combos:
-        keys = [key for key, value in dictionary.items() if combo in value]
-        if keys == []:
-            pass
-        else:
-            print(keys)       
-    
-            
-            
-combo_objs('mushlam') 
-
+# def combo_objs(user_entry):
+#     word = [user_entry[i:j] for i, j in itertools.combinations(range(len(user_entry)+1),2)]
+#     combos = sorted(word, key=len, reverse=True)
+#     print(combos)
+#     for combo in combos:
+#         keys = [key for key, value in dictionary.items() if combo in value]
+#         if keys == []:
+#             pass
+#         else:
+#             print(keys)                 
 
 def last_letter(user_entry): 
-    permutations = []
+    letter_opts = []
     for letter in user_entry:
         keys = [key for key, value in dictionary.items() if letter in value]
-        permutations.append(keys)   
-    if permutations[len(user_entry)-1] == ['מ']:
+        letter_opts.append(keys)
+        return letter_opts[len(letter_opts)-1]  
+    if letter_opts[len(user_entry)-1] == ['מ']:
         return 'ם'
-    elif permutations[len(user_entry)-1] == ['פ']:
+    elif letter_opts[len(user_entry)-1] == ['פ']:
         return 'ף'
-    elif permutations[len(user_entry)-1] == ['כ']:
+    elif letter_opts[len(user_entry)-1] == ['כ']:
         return 'ך'
-    elif permutations[len(user_entry)-1] == ['צ']:
+    elif letter_opts[len(user_entry)-1] == ['צ']:
         return 'ץ'
-    elif permutations[len(user_entry)-1] == ['נ']:
+    elif letter_opts[len(user_entry)-1] == ['נ']:
         return 'ן'
     else:
         return -1
 
+
+def word_combos(user_entry):
+    for phoneme in user_entry:
+            keys = [key for key, value in dictionary.items() if phoneme in value]
+            for key in keys:
+                i = 0
+                print(key[i])
+                i += 1
+
+
+word_combos('shalom')

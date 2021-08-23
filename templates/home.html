@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,116 +9,164 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Miriam+Libre&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link href="/static/style.css" rel="stylesheet">
+    <link href="./static/style.css" rel="stylesheet">
   </head>
 
-  <body id="app">
-    
-    <table>
+  <body>
+    <div id="app">
+        <div id="top" class="flex flex-row">
+          <nav class="flex flex-col"> 
+            <button type="button" class="collapsible">About</button>
+              <div class="content">
+                <p>Hear a Hebrew word that you're just not quite sure about? Let Shamati, the Fuzzy Hebrew Dictionary, help you out! Simply  type out phonetically the sounds you heard (in English/Latin script), and possible Hebrew words will result below.</p>
+              </div>
+            <button type="button" class="collapsible">Contact</button>
+              <div class="content">
+                <div class="container">
+                  <form action="/action_page.php">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Name"><br>
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="E-mail"><br>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Message" style="height:200px"></textarea>
+                    <input type="submit" value="submit">
+                  </form>
+                </div>
+              </div>
+          </nav>
+          <header class='flex flex-col text-right'>
+            <h1 class='text-6xl mt-5 mr-4'>Shamati</h1>
+            <h4 class='mr-7'>The Fuzzy Hebrew Dictionary</h4>
+            <h2 class='text-6xl mr-40'>שמעתי</h2>
+          </header>
+        </div>
+
+    <table class="table-auto">
       <tr>
-        <td><button value="" v-model="string"> </button><td>
-        <td><button value="'" v-model="string">'</button><td>
-        <td><button value="a" v-model="string">a</button><td>
-        <td><button>ah</button><td>
-        <td><button>ai</button><td>
-        <td><button>av</button><td>
-        <td><button>ay</button><td>
-        <td><button>ach</button><td>
-        <td><button>akh</button><td>
-        <td><button>b</button><td>
-        <td><button>c</button><td>
-        <td><button>ch</button><td>
-        <td><button>ck</button><td>
-        <td><button>d</button><td>
-        <td><button>e</button><td>
-        <td><button>ei</button><td>
-        <td><button>eh</button><td>
-        <td><button>ev</button><td>
+        <td><button class="btn btn-dark" @click="add_phoneme('')"> </button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('\'')">'</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('a')">a</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('ah')">ah</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('ai')">ai</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('au')">au</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('av')">av</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('ay')">ay</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('ach')">ach</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('akh')">akh</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('b')">b</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('c')">c</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('ch')">ch</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('ck')">ck</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('d')">d</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('e')">e</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('ei')">ei</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('eh')">eh</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('ev')">ev</button></td>
       </tr>
       <tr>
-        <td><button>f</button></td>
-        <td><button>g</button></td>
-        <td><button>h</button></td>
-        <td><button>i</button></td>
-        <td><button>i</button></td>
-        <td><button>izz</button></td>
-        <td><button>j</button></td>
-        <td><button>k</button></td>
-        <td><button>kh</button></td>
-        <td><button>l</button></td>
-        <td><button>m</button></td>
-        <td><button>n</button></td>
-        <td><button>o</button></td>
-        <td><button>oh</button></td>
-        <td><button>oo</button></td>
-        <td><button>ou</button></td>
-        <td><button>p</button></td>
-        <td><button>ph</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('f')">f</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('g')">g</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('h')">h</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('i')">i</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('izz')">izz</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('j')">j</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('k')">k</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('kh')">kh</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('l')">l</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('m')">m</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('n')">n</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('o')">o</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('oh')">oh</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('oo')">oo</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('ou')">ou</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('p')">p</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('ph')">ph</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('q')">q</button></td>
       </tr>
       <tr>
-        <td><button>q</button></td>
-        <td><button>r</button></td>
-        <td><button>s</button></td>
-        <td><button>sh</button></td>
-        <td><button>sch</button></td>
-        <td><button>t</button></td>
-        <td><button>ts</button></td>
-        <td><button>tz</button></td>
-        <td><button>u</button></td>
-        <td><button>v</button></td>
-        <td><button>va</button></td>
-        <td><button>ve</button></td>
-        <td><button>w</button></td>
-        <td><button>wa</button></td>
-        <td><button>wo</button></td>
-        <td><button>wu</button></td>
-        <td><button>y</button></td>
-        <td><button>z</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('r')">r</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('s')">s</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('sh')">sh</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('sch')">sch</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('t')">t</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('ts')">ts</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('tz')">tz</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('u')">u</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('v')">v</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('va')">va</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('ve')">ve</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('w')">w</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('wa')">wa</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('wo')">wo</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('wu')">wu</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('y')">y</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('z')">z</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('zh')">zh</button></td>
       </tr>
     </table>
-    <p>{{ string }}</p>
-    <button @click="search">search</button
+    <p>[[ string ]]</p>
+    <button @click="delete_phoneme()">-</button> 
 
+    {% comment %} <button @click="search">search</button>  {% endcomment %}
+
+    <table v-if="results">
+      <tr>
+        <th>Word</th>
+        <th>Transliteration</th>
+        <th>Root</th>
+        <th>Part of Speech</th>
+        <th>Definition</th>
+      </tr>
+      <tr v-for="result in results">
+        <td>[[ results.word ]]</td>
+        <td>[[ results.transliteration ]]</td>
+        <td>[[ results.root ]]</td>
+        <td>[[ results.partofspeech ]]</td>
+        <td>[[ results.definition ]]</td>   
+      </tr>
+    </table> 
     <footer class='absolute bottom-0'>&copy; 2021 Shamati</footer>
-
+</div>
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
       new Vue({
         el: '#app',
+        delimiters: ['[[', ']]'],
         data: {
+          string: '',
           results: [],
-          string: 'something'
           },
-        },
         methods: {
-          click: function() {
-            this.string.append(value)
-            console.log(this.string)
+          add_phoneme: function(phoneme) {
+            this.string += phoneme
+            this.results.push(phoneme)
+            console.log(this.results)
           },
-          search: function() {
-            
+          delete_phoneme: function(phoneme) {
+            this.string.slice(0, -1)
+            console.log(this.string)
           }
         }
 
     })
     </script>
     <script>
-      var coll = document.getElementsByClassName("collapsible");
-      var i;
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
 
-      for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function() {
-          this.classList.toggle("active");
-          var content = this.nextElementSibling;
-          if (content.style.display === "block") {
-            content.style.display = "none";
-          } else {
-            content.style.display = "block";
-          }
-        });
-      }
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
     </script>
-
-</body>
+  </body>
 </html>
