@@ -59,14 +59,14 @@ def last_letter(user_entry):
     else:
         return -1
 
+phonemes = ['d', 'a', 'f']
 
-def word_combos(user_entry):
-    for phoneme in user_entry:
-            keys = [key for key, value in dictionary.items() if phoneme in value]
-            for key in keys:
-                i = 0
-                print(key[i])
-                i += 1
+def word_combos(phonemes):
+    for phoneme in phonemes:
+        keys = [key for key, value in dictionary.items() if phoneme in value]
+        print(keys)
+        for key in keys:
+            print(key)
 
 
-word_combos('shalom')
+word_combos(phonemes)

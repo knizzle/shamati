@@ -105,8 +105,8 @@
         <td><button class="btn btn-dark" @click="add_phoneme('zh')">zh</button></td>
       </tr>
     </table>
-    <p>[[ string ]]</p>
-    <button @click="delete_phoneme()">-</button> 
+    <p>Search for: [[ string ]]</p>
+    <button @click="delete_phoneme()">undo</button> 
 
     {% comment %} <button @click="search">search</button>  {% endcomment %}
 
@@ -136,17 +136,21 @@
         delimiters: ['[[', ']]'],
         data: {
           string: '',
+          phonemes: [],
           results: [],
           },
         methods: {
           add_phoneme: function(phoneme) {
             this.string += phoneme
-            this.results.push(phoneme)
-            console.log(this.results)
+            this.phonemes.push(phoneme)
+            console.log(this.phonemes)
           },
           delete_phoneme: function(phoneme) {
-            this.string.slice(0, -1)
-            console.log(this.string)
+            this.phonemes.pop(phoneme)
+            this.string = this.string.substring(0, this.string.length-1)
+          },
+          search: function(){
+            
           }
         }
 
