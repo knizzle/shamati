@@ -33,5 +33,3 @@ class HebString(APIView):
         phoneme_output = ', '.join([str(item) for item in all_phonemes])
         return Response(all_phonemes)
 
-# class PhonemeJoin(APIView):
-#     def 

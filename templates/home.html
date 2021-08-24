@@ -8,19 +8,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Miriam+Libre&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <link href="./static/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
   </head>
 
   <body>
     <div id="app">
         <div id="top" class="flex flex-row">
           <nav class="flex flex-col"> 
-            <button type="button" class="collapsible">About</button>
+            <button type="button" class="collapsible text-left">About</button>
               <div class="content">
-                <p>Hear a Hebrew word that you're just not quite sure about? Let Shamati, the Fuzzy Hebrew Dictionary, help you out! Simply  type out phonetically the sounds you heard (in English/Latin script), and possible Hebrew words will result below.</p>
+                <p>Hear a Hebrew word that you're just not quite sure about? Let Shamati, the Fuzzy Hebrew Dictionary, help you out! Simply  type out phonetically the sounds you heard (in English/Latin script), and possible Hebrew words will be listed below.</p>
               </div>
-            <button type="button" class="collapsible">Contact</button>
+            <button type="button" class="collapsible text-left">Contact</button>
               <div class="content">
                 <div class="container">
                   <form action="/action_page.php">
@@ -41,10 +44,15 @@
             <h2 class='text-6xl mr-40'>שמעתי</h2>
           </header>
         </div>
+        <div v-for="result in results">
+          [[ result ]]
+        </div>
+        <button @click="search">search</button>
 
-    <table class="table-auto">
+    <p>Click letters to spell a word. Click individual letters as much as possible, unless you are sure that a two-/three-letter combination is one Hebrew letter.</p>
+    <table id="phonemes" class="table-auto">
       <tr>
-        <td><button class="btn btn-dark" @click="add_phoneme('')"> </button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('')">__</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('\'')">'</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('a')">a</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('ah')">ah</button></td>
@@ -62,15 +70,15 @@
         <td><button class="btn btn-dark" @click="add_phoneme('e')">e</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('ei')">ei</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('eh')">eh</button></td>
-        <td><button class="btn btn-dark" @click="add_phoneme('ev')">ev</button></td>
       </tr>
       <tr>
+        <td><button class="btn btn-dark" @click="add_phoneme('ev')">ev</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('f')">f</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('g')">g</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('h')">h</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('i')">i</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('izz')">izz</button></td>
-        <td><button class="btn btn-dark" @click="add_phoneme('j')">j</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('j')">j/zh</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('k')">k</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('kh')">kh</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('l')">l</button></td>
@@ -82,9 +90,9 @@
         <td><button class="btn btn-dark" @click="add_phoneme('ou')">ou</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('p')">p</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('ph')">ph</button></td>
-        <td><button class="btn btn-dark" @click="add_phoneme('q')">q</button></td>
       </tr>
       <tr>
+        <td><button class="btn btn-dark" @click="add_phoneme('q')">q</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('r')">r</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('s')">s</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('sh')">sh</button></td>
@@ -102,13 +110,10 @@
         <td><button class="btn btn-dark" @click="add_phoneme('wu')">wu</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('y')">y</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('z')">z</button></td>
-        <td><button class="btn btn-dark" @click="add_phoneme('zh')">zh</button></td>
       </tr>
     </table>
     <p>Search for: [[ string ]]</p>
-    <button @click="delete_phoneme()">undo</button> 
-
-    {% comment %} <button @click="search">search</button>  {% endcomment %}
+    <button class="bg-green-300 hover:bg-green-200 rounded m-3 px-3 py-2" @click="delete_phoneme()">undo</button> 
 
     <table v-if="results">
       <tr>
@@ -148,9 +153,16 @@
           delete_phoneme: function(phoneme) {
             this.phonemes.pop(phoneme)
             this.string = this.string.substring(0, this.string.length-1)
+            console.log(this.phonemes)
           },
+          {% comment %} get request isnt working {% endcomment %}
           search: function(){
-            
+            axios({
+              method: 'get',
+              url: '/api_app/hebstring/'
+            }).then(response => {
+              this.results = response.data
+            })            
           }
         }
 

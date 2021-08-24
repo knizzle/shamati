@@ -62,11 +62,41 @@ def last_letter(user_entry):
 phonemes = ['d', 'a', 'f']
 
 def word_combos(phonemes):
+    word_combos = [] # this will be a list of all phonemes combos, where first list = first letter, second  = second, etc.
     for phoneme in phonemes:
+        i = 0 # index of letter lists
+        key_combos = []
         keys = [key for key, value in dictionary.items() if phoneme in value]
-        print(keys)
         for key in keys:
-            print(key)
+            combos.append(key)
+            print(combos)
 
-
+        for phoneme_list in dictionary.values():
+            if phoneme in phoneme_list:
+                print(phoneme, phoneme_list)
+        i += 1 
+    print(word_combos)
+    
 word_combos(phonemes)
+
+'''
+['ד']
+['א', 'ה', 'ע', '']
+['פ']
+
+['d']
+['a.1', 'a.2', 'a.3', 'a.4']
+['f']
+
+combos = 
+
+['d', 'a.1', 'f']
+['d', 'a.2', 'f']
+['d', 'a.3', 'f']
+['d', 'a.4', 'f']
+
+if key == '': skip/ignore/join sides
+if last key list is exception letter, replace with correct one
+
+'''   
+
