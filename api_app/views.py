@@ -28,8 +28,11 @@ from .serializers import DictionarySerializer, SoundsSerializer, LettersSerializ
 
 class HebString(APIView):
 
-    def get(self, request, soundlookup, format=None):
-        all_phonemes = Phonemes.objects.get(text=soundlookup).hebletter.values()
-        phoneme_output = ', '.join([str(item) for item in all_phonemes])
-        return Response(all_phonemes)
-
+    def get(self, request, format=None):
+        # all_phonemes = Phonemes.objects.get(text=soundlookup).hebletter.values()
+        # phoneme_output = ', '.join([str(item) for item in all_phonemes])
+        return Response(request.data)
+        
+    def post(self, request):
+        print(request.data)
+        return Response(request.data)

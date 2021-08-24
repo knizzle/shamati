@@ -17,7 +17,7 @@
 
   <body>
     <div id="app">
-          
+    {% csrf_token %}    
           <header class='flex flex-col text-right'>
             <h1 class='text-6xl mt-5 mr-4'>Shamati</h1>
             <h4 class='mr-7'>The Fuzzy Hebrew Dictionary</h4>
@@ -119,13 +119,13 @@
                 <div class="content">
                   <div class="container">
                     <form action="/action_page.php">
-                      <label for="name">Name</label>
-                      <input type="text" id="name" name="name" placeholder="Name"><br>
-                      <label for="email">Email</label>
-                      <input type="text" id="email" name="email" placeholder="E-mail"><br>
-                      <label for="message">Message</label>
-                      <textarea id="message" name="message" placeholder="Message" style="height:200px"></textarea>
-                      <input type="submit" value="submit">
+                      <label class="p-2 my-1 mr-5" for="name">Name</label>
+                      <input class="p-2 my-1" type="text" id="name" name="name" placeholder=" Name"><br>
+                      <label class="p-2 my-1 mr-5" for="email">Email</label>
+                      <input class="p-2 my-1" type="text" id="email" name="email" placeholder=" E-mail"><br>
+                      <label class="p-2 my-1" for="message">Message</label>
+                      <textarea class="p-2 my-1" id="message" name="message" placeholder="Message" style="height:200px"></textarea>
+                      <input class="p-2 my-1 rounded" type="submit" value="submit">
                     </form>
                   </div>
           </div>
@@ -144,27 +144,39 @@
           string: '',
           phonemes: [],
           results: '',
+          csrf_token: ''
           },
         methods: {
           add_phoneme: function(phoneme) {
+            this.csrf_token = document.querySelector("input[name=csrfmiddlewaretoken]").value
             this.string += phoneme
             this.phonemes.push(phoneme)
             console.log(this.phonemes)
+            console.log(this.csrf_token)
           },
           delete_phoneme: function(phoneme) {
             this.phonemes.pop(phoneme)
             this.string = this.string.substring(0, this.string.length-1)
             console.log(this.phonemes)
           },
-          {% comment %} get request isnt working {% endcomment %}
           search: function(){
             axios({
-              method: 'get',
-              url: '/api_app/hebstring/'
+              method: 'post',
+              url: '/api_app/hebstring/',
+              headers: {
+                'X-CSRFToken': this.csrf_token 
+                },
+              data: {
+                phonemes: this.phonemes
+              }
             }).then(response => {
               this.results = response.data
             })            
-          }
+          },
+          mounted: function() {
+              this.csrf_token = document.querySelector("input[name=csrfmiddlewaretoken]").value
+              {% comment %} <input type="hidden" name="csrfmiddlewaretoken" value="hGy5yHlEh0lTojfdeUKe8NQlKWmrSQlciFR8MMd7mYrJaKMuZVIgF7dXJoR9OkYk"> {% endcomment %}
+            }
         }
 
     })
