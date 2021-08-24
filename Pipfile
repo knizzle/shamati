@@ -8,6 +8,7 @@ django = "==3.2.6"
 djangorestframework = "==3.12.4"
 django-on-heroku = "*"
 gunicorn = "*"
+nltk = "*"
 
 [dev-packages]
 
