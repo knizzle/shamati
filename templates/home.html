@@ -44,9 +44,6 @@
             <h2 class='text-6xl mr-40'>שמעתי</h2>
           </header>
         </div>
-        <div v-for="result in results">
-          [[ result ]]
-        </div>
 
     <p>Click letters to spell a word. Click individual letters as much as possible, unless you are sure that a two-/three-letter combination is one Hebrew letter.</p>
     <table id="phonemes" class="table-auto">
@@ -111,8 +108,8 @@
         <td><button class="btn btn-dark" @click="add_phoneme('z')">z</button></td>
       </tr>
     </table>
-    <div>
-      <p>Search for: [[ string ]]<span><button class="bg-green-300 bg-transparent hover:bg-green-200 rounded m-3 px-3 py-2" @click="delete_phoneme()">undo</button> </span></p>
+    <div class="text-center">
+      <p>Search for: [[ string ]]<span><button class="bg-green-300 bg-transparent hover:bg-red-200 rounded m-3 px-3 py-2" @click="delete_phoneme()">undo</button></span></p>
       <button id="search_btn" class="bg-green-300 hover:bg-green-200 rounded m-3 px-4 py-2" @click="search">search</button>
     </div>
     <table v-if="results">
