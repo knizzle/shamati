@@ -2,6 +2,10 @@ body {
     font-family: 'Miriam Libre', sans-serif;
   }
 
+  summary {
+    list-style-type: none;
+  }
+
 .collapsible {
     background-color: #777;
     color: white;
@@ -25,7 +29,7 @@ body {
   background-color: #f1f1f1;
 }
 
-h2, p {
+h2, p, #search_btn {
   font-family: 'Arimo', sans-serif;
 }
 
@@ -39,7 +43,7 @@ table, p {
 #phonemes {
   text-align: center;
   border-collapse: collapse;
-  width: 80%;
+  width: 75%;
 }
 
 #phonemes td {
