@@ -17,36 +17,18 @@
 
   <body>
     <div id="app">
-        <div id="top" class="flex flex-row">
-          <nav class="flex flex-col"> 
-            <button type="button" class="collapsible text-left">About</button>
-              <div class="content">
-                <summary class="max-w-sm">Hear a Hebrew word that you're just not quite sure about? Let Shamati, the Fuzzy Hebrew Dictionary, help you out! Simply  type out phonetically the sounds you heard (in English/Latin script), and possible Hebrew words will be listed below.</summary>
-              </div>
-            <button type="button" class="collapsible text-left max-w-sm">Contact</button>
-              <div class="content">
-                <div class="container">
-                  <form action="/action_page.php">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Name"><br>
-                    <label for="email">Email</label>
-                    <input type="text" id="email" name="email" placeholder="E-mail"><br>
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Message" style="height:200px"></textarea>
-                    <input type="submit" value="submit">
-                  </form>
-                </div>
-              </div>
-          </nav>
+          
           <header class='flex flex-col text-right'>
             <h1 class='text-6xl mt-5 mr-4'>Shamati</h1>
             <h4 class='mr-7'>The Fuzzy Hebrew Dictionary</h4>
             <h2 class='text-6xl mr-40'>שמעתי</h2>
           </header>
-        </div>
 
-    <p>Click letters to spell a word. Click individual letters as much as possible, unless you are sure that a two-/three-letter combination is one Hebrew letter.</p>
     <table id="phonemes" class="table-auto">
+    <div class="text-center">
+      <p>Search for: [[ string ]]<span><button class="bg-green-300 bg-transparent hover:bg-red-200 rounded mx-1 my-3 px-3 py-2" @click="delete_phoneme()">undo</button></span><span><button id="search_btn" class="bg-green-300 hover:bg-green-200 rounded my-3 px-4 py-2" @click="search">search</button></span></p>
+    <p>Click letters to spell a word. Click individual letters as much as possible, unless you are sure that a two-/three-letter combination is one Hebrew letter.</p>
+    </div>
       <tr>
         <td><button class="btn btn-dark" @click="add_phoneme('')">__</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('\'')">'</button></td>
@@ -108,10 +90,6 @@
         <td><button class="btn btn-dark" @click="add_phoneme('z')">z</button></td>
       </tr>
     </table>
-    <div class="text-center">
-      <p>Search for: [[ string ]]<span><button class="bg-green-300 bg-transparent hover:bg-red-200 rounded m-3 px-3 py-2" @click="delete_phoneme()">undo</button></span></p>
-      <button id="search_btn" class="bg-green-300 hover:bg-green-200 rounded m-3 px-4 py-2" @click="search">search</button>
-    </div>
     <table v-if="results">
       <tr>
         <th class="px-2">Word</th>
@@ -128,7 +106,33 @@
         <td>[[ results.definition ]]</td>   
       </tr>
     </table> 
-    <footer class='absolute bottom-0'>&copy; 2021 Shamati</footer>
+    <footer class='absolute bottom-0 flex flex-row justify-even m-3'>&copy; 2021 Shamati
+      <nav class="flex flex-row"> 
+          <div class='flex flex-col'>
+              <button type="button" class="collapsible flex text-left">About</button>
+                <div class="content">
+                  <summary class="max-w-sm">Shamati takes a word or combination of sounds that the user hears/heard, typed phonetically in English/Latin script, and offers a list of possible Hebrew words. Code can be found <a href="https://github.com/knizzle/shamati">here</a>.</summary>
+                </div>
+          </div>
+          <div class='flex flex-col'>
+              <button type="button" class="collapsible flex text-left max-w-sm">Contact</button>
+                <div class="content">
+                  <div class="container">
+                    <form action="/action_page.php">
+                      <label for="name">Name</label>
+                      <input type="text" id="name" name="name" placeholder="Name"><br>
+                      <label for="email">Email</label>
+                      <input type="text" id="email" name="email" placeholder="E-mail"><br>
+                      <label for="message">Message</label>
+                      <textarea id="message" name="message" placeholder="Message" style="height:200px"></textarea>
+                      <input type="submit" value="submit">
+                    </form>
+                  </div>
+          </div>
+                  
+                </div>
+            </nav>
+    </footer>
 </div>
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

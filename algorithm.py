@@ -1,5 +1,3 @@
-import itertools
-
 dictionary = {
     "א": ["", "a", "'", "o", "i"],
     "ב": ["v", "b"],
@@ -29,76 +27,56 @@ dictionary = {
     "": ["a", "i", "e", "o", "h", "u", "y"]
 }
 
-def keys(user_entry):
-    word = [user_entry[i:j] for i, j in itertools.combinations(range(len(user_entry)+1),2)]
-    combos = sorted(word, key=len, reverse=True)
-    i = 0
-    for combo in combos:
-        keys = [key for key, value in dictionary.items() if combo in value]
-        print(combos[len(keys)-1])
-        if keys == []:
-            pass
-        else:
-            print(keys)
-            # for key in keys:
-            #     if key == '':
-            #         pass
-            #     else: 
-            #         print(key)
-
-
 def last_letter(user_entry): 
     letter_opts = []
     for letter in user_entry:
         keys = [key for key, value in dictionary.items() if letter in value]
         letter_opts.append(keys)
-        return letter_opts[len(letter_opts)-1]  
+    print(letter_opts)
+    word_combos = []
+    i = 0
+    for letter in letter_opts[i]:
+        first_letter = letter
+        word_combos.append(first_letter)
+    for letter in letter_opts[i+1]:
+        second_letter = letter
+        word_combos = first_letter + second_letter
+        if second_letter == '':
+            pass
+            print(word_combos)
+    for letter in letter_opts[i+2]:
+        third_letter = letter
+        word_combos = first_letter + second_letter + third_letter
+        if third_letter == '':
+            pass
+        else:
+            print(word_combos)
+    for letter in letter_opts[i+3]:
+        fourth_letter = letter
+        word_combos = first_letter + second_letter + third_letter + fourth_letter
+        if fourth_letter == '':
+            pass
+        else:
+            print(word_combos)
+    for letter in letter_opts[i+4]:
+        fifth_letter = letter
+        word_combos = first_letter + second_letter + third_letter + fourth_letter + fifth_letter
+        if fifth_letter == '':
+            pass
+        else:
+            print(word_combos)
     if letter_opts[len(user_entry)-1] == ['מ']:
-        return 'ם'
+        print('ם')
     elif letter_opts[len(user_entry)-1] == ['פ']:
-        return 'ף'
+        print('ף')
     elif letter_opts[len(user_entry)-1] == ['כ']:
-        return 'ך'
+        print('ך')
     elif letter_opts[len(user_entry)-1] == ['צ']:
-        return 'ץ'
+        print('ץ')
     elif letter_opts[len(user_entry)-1] == ['נ']:
-        return 'ן'
+        print('ן')
     else:
-        return -1
+        print(-1)
 
-'''
-
-user submits list of phonemes
-each phoneme has Hebrew letter (key) that matches its value
-each phoneme in user entry is list of keys
-first list == first letter
-second list == second letter
-third list == third letter
-etc.
-if letter in list is '', skip
-need combination of all letters, but still in list order
-
-['a','']
-['b','c','d','']
-['e','f']
-
-==
-
-abe,
-abf,
-ace,
-acf,
-ade,
-adf,
-ae,
-af,
-be,
-bf,
-ce,
-cf,
-de,
-df,
-e,
-f
-
-'''
+last_letter(['sh', 'a', 'l', 'o', 'm'])
+# last_letter(['d', 'a', 'f'])

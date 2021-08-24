@@ -55,4 +55,7 @@ table, p {
 
 #phonemes td:hover {background-color: #ddd;}
 
-
+a {
+  text-decoration: underline;
+  color: blue
+}
