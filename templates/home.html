@@ -152,7 +152,6 @@
             this.string += phoneme
             this.phonemes.push(phoneme)
             console.log(this.phonemes)
-            console.log(this.csrf_token)
           },
           delete_phoneme: function(phoneme) {
             this.phonemes.pop(phoneme)
@@ -172,11 +171,7 @@
             }).then(response => {
               this.results = response.data
             })            
-          },
-          mounted: function() {
-              this.csrf_token = document.querySelector("input[name=csrfmiddlewaretoken]").value
-              {% comment %} <input type="hidden" name="csrfmiddlewaretoken" value="hGy5yHlEh0lTojfdeUKe8NQlKWmrSQlciFR8MMd7mYrJaKMuZVIgF7dXJoR9OkYk"> {% endcomment %}
-            }
+          }
         }
 
     })

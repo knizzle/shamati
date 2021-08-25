@@ -13,7 +13,7 @@ router = DefaultRouter()
 # urlpatterns = router.urls
 
 urlpatterns = [
-    path('hebstring/', HebString.as_view()),
-    # path('hebstring/<str:soundlookup>/', HebString.as_view()),
+    # path('hebstring/', HebString.as_view()),
+    path('hebstring/<str:input_word>/', HebString.as_view()),
     # path('api_app/', HebString.as_view(), name='home.html')
 ]

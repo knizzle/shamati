@@ -33,38 +33,6 @@ def last_letter(user_entry):
         keys = [key for key, value in dictionary.items() if letter in value]
         letter_opts.append(keys)
     print(letter_opts)
-    word_combos = []
-    i = 0
-    for letter in letter_opts[i]:
-        first_letter = letter
-        word_combos.append(first_letter)
-    for letter in letter_opts[i+1]:
-        second_letter = letter
-        word_combos = first_letter + second_letter
-        if second_letter == '':
-            pass
-            print(word_combos)
-    for letter in letter_opts[i+2]:
-        third_letter = letter
-        word_combos = first_letter + second_letter + third_letter
-        if third_letter == '':
-            pass
-        else:
-            print(word_combos)
-    for letter in letter_opts[i+3]:
-        fourth_letter = letter
-        word_combos = first_letter + second_letter + third_letter + fourth_letter
-        if fourth_letter == '':
-            pass
-        else:
-            print(word_combos)
-    for letter in letter_opts[i+4]:
-        fifth_letter = letter
-        word_combos = first_letter + second_letter + third_letter + fourth_letter + fifth_letter
-        if fifth_letter == '':
-            pass
-        else:
-            print(word_combos)
     if letter_opts[len(user_entry)-1] == ['מ']:
         print('ם')
     elif letter_opts[len(user_entry)-1] == ['פ']:
@@ -78,5 +46,13 @@ def last_letter(user_entry):
     else:
         print(-1)
 
-last_letter(['sh', 'a', 'l', 'o', 'm'])
-# last_letter(['d', 'a', 'f'])
+# last_letter(['sh', 'a', 'l', 'o', 'm'])
+last_letter(['d', 'a', 'f'])
+
+
+def heb_keys(user_entry): 
+    for letter in user_entry:
+        keys = [key for key, value in dictionary.items() if letter in value]
+        print(keys)
+
+heb_keys(['d', 'a', 'f'])
