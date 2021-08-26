@@ -32,17 +32,16 @@
                   <div class="container">
                     <form action="/action_page.php" class="max-w-sm">
                       <label class="p-2 my-1 mr-5" for="name">Name</label>
-                      <input class="p-2 my-1" type="text" id="name" name="name" placeholder=" Name"><br>
+                      <input class="p-2 my-1" type="text" id="name" name="name" placeholder=" Name" required><br>
                       <label class="p-2 my-1 mr-5" for="email">Email</label>
-                      <input class="p-2 my-1" type="text" id="email" name="email" placeholder=" E-mail"><br>
+                      <input class="p-2 my-1" type="text" id="email" name="email" placeholder=" E-mail" required><br>
                       <label class="p-2 my-1" for="message">Message</label>
-                      <textarea class="p-2 my-1" id="message" name="message" placeholder="Message" style="height:200px"></textarea>
+                      <textarea class="p-2 my-1" id="message" name="message" placeholder="Message" style="height:100px" required></textarea>
                       <input class="p-2 my-1 rounded" type="submit" value="submit">
                     </form>
                   </div>
+              </div>
           </div>
-                  
-                </div>
             </nav>  
           <header class='flex flex-col text-right'>
             <h1 class='text-6xl mt-5 mr-4'>Shamati</h1>
@@ -125,7 +124,7 @@
         <th class="px-2 underline tracking-wide">Definition</th>
       </tr>
       <tr v-for="result in results">
-        <td>[[ result ]]</td>
+        <td class="font-sans">[[ result ]]</td>
         <td>[[ string ]]</td>
         <td>[[ results.root ]]</td>
         <td>[[ results.partofspeech ]]</td>

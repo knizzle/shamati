@@ -37,6 +37,4 @@ class HebString(APIView):
             result = ''.join(result)
             results_list.append(result)
             print(result)
-        # for result in results_list:
-        #     if result in 
         return Response(results_list)
