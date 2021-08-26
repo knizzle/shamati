@@ -51,7 +51,7 @@
     </div>
     <table id="phonemes" class="table-auto">
     <div class="text-center">
-      <p><span><button class="bg-green-300 hover:bg-green-200 rounded m-3 px-4 py-2" @click="clear">clear</button></span>Search for: <span class='underline'>[[ string ]]</span><span><button class="bg-green-300 bg-transparent hover:bg-red-200 rounded mr-1 ml-3 my-3 px-3 py-2" @click="delete_phoneme()">undo</button></span><span><button id="search_btn" class="bg-green-300 hover:bg-green-200 rounded my-3 px-4 py-2" @click="search">search</button></span></p>
+      <p><span><button class="bg-green-300 hover:bg-green-200 rounded m-3 px-4 py-2" @click="clear">clear</button></span>Search for: <span class='string'>[[ string ]]</span><span><button class="bg-green-300 bg-transparent hover:bg-red-200 rounded mr-1 ml-3 my-3 px-3 py-2" @click="delete_phoneme()">undo</button></span><span><button id="search_btn" class="bg-green-300 hover:bg-green-200 rounded my-3 px-4 py-2" @click="search">search</button></span></p>
       <p>Click letters to spell a word. Click individual letters as much as possible, unless you are sure that a two-/three-letter combination is one Hebrew letter.</p>
     </div>
       <tr>
@@ -126,7 +126,7 @@
       <tr v-for="result in results">
         <td class="font-sans">[[ result ]]</td>
         <td>[[ string ]]</td>
-        <td>[[ results.root ]]</td>
+        <td class="font-sans">[[ results.root ]]</td>
         <td>[[ results.partofspeech ]]</td>
         <td>[[ results.definition ]]</td>   
       </tr>
