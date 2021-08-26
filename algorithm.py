@@ -1,3 +1,5 @@
+import itertools
+
 dictionary = {
     "א": ["", "a", "'", "o", "i"],
     "ב": ["v", "b"],
@@ -23,7 +25,7 @@ dictionary = {
     "ת": ["t", "th"],
     "יי": ["ai", "ay", "ey", "ei"],
     "יו": ["av", "ev"],
-    "וו": ["w", "wu", "wa", "wo", "v", "ve", "va"],
+    "וו": ["w", "wu", "wa", "wo", "v", "ve", "va", "vu"],
     "": ["a", "i", "e", "o", "h", "u", "y"]
 }
 
@@ -47,12 +49,32 @@ def last_letter(user_entry):
         print(-1)
 
 # last_letter(['sh', 'a', 'l', 'o', 'm'])
-last_letter(['d', 'a', 'f'])
+# last_letter(['d', 'a', 'f'])
 
 
 def heb_keys(user_entry): 
     for letter in user_entry:
         keys = [key for key, value in dictionary.items() if letter in value]
-        print(keys)
+        return keys
 
 heb_keys(['d', 'a', 'f'])
+# heb_keys(['h', 'ai', 'm'])
+
+keys = [['ד'], ['א', 'ה', 'ע', ''], ['ף']]
+
+
+def word_combos(keys):
+    words = list(itertools.product(*keys))
+    for word in words:
+        word = ''.join(word)
+        print(word)
+
+word_combos(keys)
+
+'''
+דאף
+דהף
+דעף
+דף
+
+'''

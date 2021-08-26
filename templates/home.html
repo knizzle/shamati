@@ -17,20 +17,45 @@
 
   <body>
     <div id="app">
-    {% csrf_token %}    
+    {% csrf_token %} 
+    <div class="flex flex-row justify-between"> 
+    <nav class="flex flex-col"> 
+          <div class='flex flex-col'>
+              <button type="button" class="collapsible flex text-left">About</button>
+                <div class="content">
+                  <summary class="max-w-sm m-2 p-3">Shamati takes a word or combination of sounds that the user hears/heard, typed phonetically in English/Latin script, and offers a list of possible Hebrew words. Code can be found <a href="https://github.com/knizzle/shamati">here</a>.</summary>
+                </div>
+          </div>
+          <div class='flex flex-col'>
+              <button type="button" class="collapsible flex text-left">Contact</button>
+                <div class="content">
+                  <div class="container">
+                    <form action="/action_page.php" class="max-w-sm">
+                      <label class="p-2 my-1 mr-5" for="name">Name</label>
+                      <input class="p-2 my-1" type="text" id="name" name="name" placeholder=" Name"><br>
+                      <label class="p-2 my-1 mr-5" for="email">Email</label>
+                      <input class="p-2 my-1" type="text" id="email" name="email" placeholder=" E-mail"><br>
+                      <label class="p-2 my-1" for="message">Message</label>
+                      <textarea class="p-2 my-1" id="message" name="message" placeholder="Message" style="height:200px"></textarea>
+                      <input class="p-2 my-1 rounded" type="submit" value="submit">
+                    </form>
+                  </div>
+          </div>
+                  
+                </div>
+            </nav>  
           <header class='flex flex-col text-right'>
             <h1 class='text-6xl mt-5 mr-4'>Shamati</h1>
             <h4 class='mr-7'>The Fuzzy Hebrew Dictionary</h4>
             <h2 class='text-6xl mr-40'>שמעתי</h2>
           </header>
-
+    </div>
     <table id="phonemes" class="table-auto">
     <div class="text-center">
-      <p>Search for: [[ string ]]<span><button class="bg-green-300 bg-transparent hover:bg-red-200 rounded mx-1 my-3 px-3 py-2" @click="delete_phoneme()">undo</button></span><span><button id="search_btn" class="bg-green-300 hover:bg-green-200 rounded my-3 px-4 py-2" @click="search">search</button></span></p>
-    <p>Click letters to spell a word. Click individual letters as much as possible, unless you are sure that a two-/three-letter combination is one Hebrew letter.</p>
+      <p><span><button class="bg-green-300 hover:bg-green-200 rounded m-3 px-4 py-2" @click="clear">Clear</button></span>Search for: [[ string ]]<span><button class="bg-green-300 bg-transparent hover:bg-red-200 rounded mx-1 my-3 px-3 py-2" @click="delete_phoneme()">undo</button></span><span><button id="search_btn" class="bg-green-300 hover:bg-green-200 rounded my-3 px-4 py-2" @click="search">search</button></span></p>
+      <p>Click letters to spell a word. Click individual letters as much as possible, unless you are sure that a two-/three-letter combination is one Hebrew letter.</p>
     </div>
       <tr>
-        <td><button class="btn btn-dark" @click="add_phoneme('')">__</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('\'')">'</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('a')">a</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('ah')">ah</button></td>
@@ -48,15 +73,15 @@
         <td><button class="btn btn-dark" @click="add_phoneme('e')">e</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('ei')">ei</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('eh')">eh</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('ev')">ev</button></td>
       </tr>
       <tr>
-        <td><button class="btn btn-dark" @click="add_phoneme('ev')">ev</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('f')">f</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('g')">g</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('h')">h</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('i')">i</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('izz')">izz</button></td>
-        <td><button class="btn btn-dark" @click="add_phoneme('j')">j/zh</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('j')">j</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('k')">k</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('kh')">kh</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('l')">l</button></td>
@@ -68,9 +93,9 @@
         <td><button class="btn btn-dark" @click="add_phoneme('ou')">ou</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('p')">p</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('ph')">ph</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('q')">q</button></td>
       </tr>
       <tr>
-        <td><button class="btn btn-dark" @click="add_phoneme('q')">q</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('r')">r</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('s')">s</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('sh')">sh</button></td>
@@ -88,6 +113,7 @@
         <td><button class="btn btn-dark" @click="add_phoneme('wu')">wu</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('y')">y</button></td>
         <td><button class="btn btn-dark" @click="add_phoneme('z')">z</button></td>
+        <td><button class="btn btn-dark" @click="add_phoneme('zh')">zh</button></td>
       </tr>
     </table>
     <table v-if="results">
@@ -99,40 +125,14 @@
         <th class="px-2">Definition</th>
       </tr>
       <tr v-for="result in results">
-        <td>[[ results.word ]]</td>
-        <td>[[ results.transliteration ]]</td>
+        <td>[[ result ]]</td>
+        <td>[[ string ]]</td>
         <td>[[ results.root ]]</td>
         <td>[[ results.partofspeech ]]</td>
         <td>[[ results.definition ]]</td>   
       </tr>
     </table> 
-    <footer class='absolute bottom-0 flex flex-row justify-even m-3'>&copy; 2021 Shamati
-      <nav class="flex flex-row"> 
-          <div class='flex flex-col'>
-              <button type="button" class="collapsible flex text-left">About</button>
-                <div class="content">
-                  <summary class="max-w-sm">Shamati takes a word or combination of sounds that the user hears/heard, typed phonetically in English/Latin script, and offers a list of possible Hebrew words. Code can be found <a href="https://github.com/knizzle/shamati">here</a>.</summary>
-                </div>
-          </div>
-          <div class='flex flex-col'>
-              <button type="button" class="collapsible flex text-left max-w-sm">Contact</button>
-                <div class="content">
-                  <div class="container">
-                    <form action="/action_page.php">
-                      <label class="p-2 my-1 mr-5" for="name">Name</label>
-                      <input class="p-2 my-1" type="text" id="name" name="name" placeholder=" Name"><br>
-                      <label class="p-2 my-1 mr-5" for="email">Email</label>
-                      <input class="p-2 my-1" type="text" id="email" name="email" placeholder=" E-mail"><br>
-                      <label class="p-2 my-1" for="message">Message</label>
-                      <textarea class="p-2 my-1" id="message" name="message" placeholder="Message" style="height:200px"></textarea>
-                      <input class="p-2 my-1 rounded" type="submit" value="submit">
-                    </form>
-                  </div>
-          </div>
-                  
-                </div>
-            </nav>
-    </footer>
+    <footer class='fixed bottom-0 flex flex-row justify-even m-3 max-w-full'>&copy; 2021 Shamati</footer>
 </div>
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -144,11 +144,10 @@
           string: '',
           phonemes: [],
           results: '',
-          csrf_token: ''
+          csrf_token: document.querySelector("input[name=csrfmiddlewaretoken]").value
           },
         methods: {
           add_phoneme: function(phoneme) {
-            this.csrf_token = document.querySelector("input[name=csrfmiddlewaretoken]").value
             this.string += phoneme
             this.phonemes.push(phoneme)
             console.log(this.phonemes)
@@ -161,7 +160,7 @@
           search: function(){
             axios({
               method: 'post',
-              url: '/api_app/hebstring/',
+              url: '/api_app/hebstring/lookup/',
               headers: {
                 'X-CSRFToken': this.csrf_token 
                 },
@@ -170,10 +169,15 @@
               }
             }).then(response => {
               this.results = response.data
+              console.log(this.results)
             })            
+          },
+          clear: function() {
+            this.string = ''
+            this.phonemes = []
+            this.results = ''
           }
         }
-
     })
     </script>
     <script>
