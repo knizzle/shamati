@@ -29,5 +29,5 @@ This project will attempt to help English speakers learn Hebrew. The user does N
 ### Schedule 
 ###### 09 AUG, 2021: Proposal done
 ###### 25 AUG, 2021: MVP #1 done 
-###### 16 AUG, 2021: MVP #2 done
+###### 26 AUG, 2021: MVP #2 done
 ###### 27 AUG, 2021: Present to PDX Code Guild
