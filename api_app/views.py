@@ -23,7 +23,7 @@ class HebString(APIView):
     def post(self, request, format=None):
         heb_list = []
         input_word = request.data['phonemes']
-        # print(input_word)
+        print(input_word)
         for input_letter in input_word:
             # phoneme is something like 'a' or 'sh'
             # queryset_of_hebrew_letter__matches is something like 'א
@@ -43,11 +43,11 @@ class HebString(APIView):
                 heb_letters.append(hebletter.letter)
             heb_list.append(heb_letters)
         results_list = []
-        # print(heb_list)
+        print(heb_list)
         results = list(itertools.product(*heb_list))
-        # print(results)
+        print(results)
         for result in results:
             result = ''.join(result)
             results_list.append(result)
-            # print(result)
+            print(result)
         return Response(results_list)

@@ -23,7 +23,7 @@
           <div class='flex flex-col'>
               <button type="button" class="collapsible flex text-left">About</button>
                 <div class="content">
-                  <summary class="max-w-sm m-2 p-3">Shamati takes a word or combination of sounds that the user hears/heard, typed phonetically in English/Latin script, and offers a list of possible Hebrew words. Code can be found <a href="https://github.com/knizzle/shamati">here</a>.</summary>
+                  <summary class="max-w-sm m-2 p-3">Shamati takes a word or combination of sounds that the user hears/heard, entered phonetically in English/Latin script, and offers a list of possible Hebrew words. Source code can be found <a href="https://github.com/knizzle/shamati">here</a>.</summary>
                 </div>
           </div>
           <div class='flex flex-col'>
@@ -118,11 +118,11 @@
     </table>
     <table v-if="results">
       <tr>
-        <th class="px-2 underline">Word</th>
-        <th class="px-2 underline">Transliteration</th>
-        <th class="px-2 underline">Root</th>
-        <th class="px-2 underline">Part of Speech</th>
-        <th class="px-2 underline">Definition</th>
+        <th class="px-2 underline tracking-wide">Word</th>
+        <th class="px-2 underline tracking-wide">Transliteration</th>
+        <th class="px-2 underline tracking-wide">Root</th>
+        <th class="px-2 underline tracking-wide">Part of Speech</th>
+        <th class="px-2 underline tracking-wide">Definition</th>
       </tr>
       <tr v-for="result in results">
         <td>[[ result ]]</td>
