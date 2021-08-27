@@ -44,8 +44,8 @@ class HebString(APIView):
                 dict_results.append({
                     'word': result,
                     'valid': False,
-                    'root': '',
-                    'partOfSpeech': '',
+                    'root': 'n/a',
+                    'partOfSpeech': 'n/a',
                     'definition': 'n/a'
                 })
             # if there is a record, add a dictionary to dict_results with 'valid': True
