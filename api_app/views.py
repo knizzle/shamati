@@ -46,7 +46,7 @@ class HebString(APIView):
                     'valid': False,
                     'root': '',
                     'partOfSpeech': '',
-                    'definition': ''
+                    'definition': 'Not found'
                 })
             # if there is a record, add a dictionary to dict_results with 'valid': True
             else:
