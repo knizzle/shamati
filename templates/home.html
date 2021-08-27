@@ -117,21 +117,22 @@
     </table>
     <table v-if="results">
       <tr>
-        <th class="px-2 underline tracking-wide">Word</th>
-        <th class="px-2 underline tracking-wide">Transliteration</th>
-        <th class="px-2 underline tracking-wide">Root</th>
-        <th class="px-2 underline tracking-wide">Part of Speech</th>
-        <th class="px-2 underline tracking-wide">Definition</th>
+        <th class="m-3 px-2 underline tracking-wider">Word</th>
+        <th class="m-3 px-2 underline tracking-wider">Transliteration</th>
+        <th class="m-3 px-2 underline tracking-wider">Root</th>
+        <th class="m-3 px-2 underline tracking-wider">Part of Speech</th>
+        <th class="m-3 px-2 underline tracking-wider">Definition</th>
       </tr>
       <tr v-for="result in results">
-        <td class="font-sans">[[ result ]]</td>
-        <td>[[ string ]]</td>
-        <td class="font-sans">[[ results.root ]]</td>
-        <td>[[ results.partofspeech ]]</td>
-        <td>[[ results.definition ]]</td>   
+        <td class="font-sans m-3">[[ result.word ]]</td>
+        <td class="m-3">[[ string ]]</td>
+        <td class="font-sans m-3">[[ result.root ]]</td>
+        <td class="m-3">[[ result.partOfSpeech ]]</td>
+        <td class="m-3">[[ result.definition ]]</td>   
       </tr>
     </table> 
     <footer class='fixed bottom-0 flex flex-row justify-even m-3 max-w-full'>&copy; 2021 Shamati</footer>
+    
 </div>
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -167,9 +168,9 @@
                 phonemes: this.phonemes
               }
             }).then(response => {
-              this.results = response.data
               console.log(this.results)
-            })            
+              this.results = response.data
+            })
           },
           clear: function() {
             this.string = ''
