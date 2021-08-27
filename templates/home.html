@@ -23,7 +23,7 @@
           <div class='flex flex-col'>
               <button type="button" class="collapsible flex text-left">About</button>
                 <div class="content">
-                  <summary class="max-w-sm m-2 p-3">Shamati takes a word or combination of sounds that the user hears/heard, entered phonetically in English/Latin script, and offers a list of possible Hebrew words. Source code can be found <a href="https://github.com/knizzle/shamati">here</a>.</summary>
+                  <summary class="max-w-sm m-2 p-3">Shamati ("I heard" in Hebrew) takes a word or combination of sounds that the user hears/heard, entered phonetically in English/Latin script, and offers a list of possible Hebrew words. Source code can be found <a href="https://github.com/knizzle/shamati">here</a>.</summary>
                 </div>
           </div>
           <div class='flex flex-col'>
@@ -124,11 +124,11 @@
         <th class="m-3 px-2 underline tracking-wider">Definition</th>
       </tr>
       <tr v-for="result in results">
-        <td class="font-sans m-3">[[ result.word ]]</td>
-        <td class="m-3">[[ string ]]</td>
-        <td class="font-sans m-3">[[ result.root ]]</td>
-        <td class="m-3">[[ result.partOfSpeech ]]</td>
-        <td class="m-3">[[ result.definition ]]</td>   
+        <td class="font-sans m-3 p-2">[[ result.word ]]</td>
+        <td class="m-3 p-2">[[ string ]]</td>
+        <td class="font-sans m-3 p-2">[[ result.root ]]</td>
+        <td class="m-3 p-2">[[ result.partOfSpeech ]]</td>
+        <td class="m-3 p-3">[[ result.definition ]]</td>   
       </tr>
     </table> 
     <footer class='fixed bottom-0 flex flex-row justify-even m-3 max-w-full'>&copy; 2021 Shamati</footer>

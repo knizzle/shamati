@@ -9,20 +9,9 @@ import itertools
 class HebString(APIView):
 
     def get(self, request, format=None):
-        data = [{
-            'word': 'שמש',
-            'valid': True,
-            'partOfSpeech': 'noun'
-        },{
-            'word': 'מש',
-            'valid': False,
-            'partOfSpeech': ''
-        }]
-        return Response({'name': 'bob', 'age': 56})
+        return Response()
         
     def post(self, request, format=None):
-        
-
         heb_list = []
         input_word = request.data['phonemes']
         print(input_word)
@@ -60,10 +49,6 @@ class HebString(APIView):
                     'definition': ''
                 })
             # if there is a record, add a dictionary to dict_results with 'valid': True
-            # word = HebWord.objects.get(word)
-            # root = HebWord.objects.get(root)
-            # partOfSpeech = HebWord.objects.get(partOfSpeech)
-            # definition =  HebWord.objects.get(definition)
             else:
                 dict_results.append({
                     'word': result,
@@ -72,10 +57,5 @@ class HebString(APIView):
                     'partOfSpeech': hebword.partOfSpeech,
                     'definition': hebword.definition
                 })
-
-        # if it does, add it to our new output list        
-                # dict_results.append(result)
-        # return the new output list
-    
         return Response(dict_results)
         
