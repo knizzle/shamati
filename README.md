@@ -1,5 +1,5 @@
 # Shamati
-- *shamati* (שמעתי) means *I heard* in Hebrew 
+- *Shamati* (שמעתי) means *I heard* in Hebrew 
 - Capstone project for PDX Code Guild
 
 ### Project Overview
