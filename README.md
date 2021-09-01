@@ -11,7 +11,7 @@ This project will attempt to help English speakers learn Hebrew. The user does N
 2. **HEBREW LEARNER**
 * For English/Latin script, create script converter ***MVP #1***
 * Find words in dictionary and list on page ***MVP #2***
-* I want a sound byte to hear how the Hebrew words sound, and to verify what I think I heard (BACKLOG)
+* Sound byte to hear how the Hebrew words sound and to verify what was heard (BACKLOG)
 3. **ANY USER**
 * Create autocomplete API (BACKLOG)
 * Bind input text/autocomplete
