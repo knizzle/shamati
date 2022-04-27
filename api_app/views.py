@@ -24,6 +24,7 @@ class HebString(APIView):
             heb_letters = []
             for hebletter in queryset_of_hebrew_letter__matches:
                 heb_letters.append(hebletter.letter)
+                
             heb_list.append(heb_letters)
         results_list = []
         print(heb_list)
